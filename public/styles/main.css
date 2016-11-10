@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Proza+Libre');
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 25px !important;
+  }
+
+  h2 {
+    font-size: 15px !important;
+  }
+
+  .test {
+    width: 90% !important;
+  }
+}
+
+
+body {
+  background-color: #444449;
+  color: white;
+
+}
+
+.test{
+width: 50%;
+}
+
+input {
+  margin-bottom: 25px;
+}
+header {
+  text-align: center;
+  margin-bottom: 10%;
+
+}
+header h1 {
+  font-size: 4em;
+}
+
+footer {
+  margin-top: 12%;
+  text-align: center;
+}

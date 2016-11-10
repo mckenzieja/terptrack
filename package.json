@@ -1,0 +1,27 @@
+{
+  "name": "terptrack",
+  "version": "1.0.0",
+  "description": "A tracking/status update for traveling interpreters",
+  "main": "app/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/metaljacke1/terptrack.git"
+  },
+  "keywords": [
+    "terptrack"
+  ],
+  "author": "Josh McKenzie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/metaljacke1/terptrack/issues"
+  },
+  "homepage": "https://github.com/metaljacke1/terptrack#readme",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "mongoose": "4.6.6"
+  },
+  "devDependencies": {}
+}

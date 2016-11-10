@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css?family=Proza+Libre');
+@media (max-width: 992px){
+  header h1 {
+    font-size: 25px !important;
+  }
+  h2 {
+    font-size: 15px !important;
+  }
+  .splash{
+  width: 95% !important;
+  padding-bottom: none !important;
+  }
+  .test {
+    width: 90% !important;
+  }
+  .profile-name  {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 5% !important;
+  }
+  .profile-photo{
+    display: block-inline  !important;
+    width: 40% !important;
+    margin-top: none !important;
+  }
+  #map {
+    display: block-inline !important;
+    width: 50% !important;
+    margin: 0 auto 0 auto !important;
+  }
+  .statusbtn {
+    width: 50% !important;
+    margin: 0 auto !important;
+    display: block !important;
+    margin-top: 2% !important;
+  }
+  .feed {
+    display: block !important;
+    width: 90% !important;
+    margin: 0 auto !important;
+    padding-bottom: none !important;
+  }
+}
+@media (max-width: 720px){
+  header h1 {
+    font-size: 25px !important;
+  }
+
+  h2 {
+    font-size: 15px !important;
+  }
+
+  .test {
+    width: 90% !important;
+  }
+  .profile-name  {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 5% !important;
+  }
+  .profile-photo{
+    display: block  !important;
+    width: 50% !important;
+    margin-top: 1% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  #map {
+    display: block !important;
+    width: 90% !important;
+    margin: 2% auto !important;
+  }
+  .statusbtn {
+    width: 90% !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+  .feed {
+    display: block !important;
+    width: 90% !important;
+    margin: 0 auto !important;
+    padding-bottom: none !important;
+  }
+}
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 25px !important;
+  }
+
+  h2 {
+    font-size: 15px !important;
+  }
+
+  .test {
+    width: 90% !important;
+  }
+  .profile-name  {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 5% !important;
+  }
+  .profile-photo{
+    display: block  !important;
+    width: 50% !important;
+    margin-top: 1% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  #map {
+    display: block !important;
+    width: 90% !important;
+    margin: 2% auto !important;
+  }
+  .statusbtn {
+    width: 90% !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+  .feed {
+    display: block !important;
+    width: 90% !important;
+    margin: 0 auto !important;
+    padding-bottom: none !important;
+  }
+}
+
+.splash{
+  background-color: #888889;
+  border-radius: 8px;
+  padding-bottom: 30%;
+  width: 80%;
+
+}
+
+.profile-name {
+  margin-left: 3%;
+  margin-top: 1%;
+  padding-top: 4%;
+}
+.profile-photo {
+  border-radius: 10px;
+  width: 20%;
+  height: 25%;
+  margin-left: 5%;
+  margin-top: -25%;
+
+}
+
+#map {
+  height: 200px;
+  width: 500px;
+  margin: 0 0 0 10%;
+  padding: 0;
+  display: inline-block;
+  background-color: gray;
+}
+.statusbtn {
+  width: 20%;
+  margin-top: -5%;
+  margin-left: 5%;
+}
+
+.feed {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  background-color: #e6e6ff;
+  color: black;
+  margin-left: 20%;
+  border-radius: 6px;
+  padding-bottom: 20px;
+}
+
+.friends {
+  display: inline-block;
+  margin-left: 5%;
+}
