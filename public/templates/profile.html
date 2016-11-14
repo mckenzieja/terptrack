@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/profile.css">
   </head>
-<body>
+<body ng-app="terptrack">
 
 <div class="container">
   <div class="row">
@@ -61,12 +61,12 @@
     <script async defer
        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhGQCRIApdyDGTfqRFCVjaa2n-HHVOg7w&callback=initMap">
        </script>
-
+<div ng-controller="mainCtrl">
 <!-- Update Status -->
-<button class="btn btn-md btn-primary btn-block statusbtn">Post Update</button>
+<button class="btn btn-md btn-primary btn-block statusbtn" href="" ng-click="helloWorld()">Post Update</button>
 <button class="btn btn-md btn-primary btn-block statusbtn arrived">Arrived</button>
 <button class="btn btn-md btn-primary btn-block statusbtn departing">Departing</button>
-
+</div>
 <!-- Other Interpreters -->
 <div class="friends">
 <h3>Collegues</h3>
@@ -98,6 +98,8 @@
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="../vendor/angular.js" type="text/javascript"></script>
+      <script src="../scripts/app.js" type="text/javascript"></script>
     </body>
 
 </html>
