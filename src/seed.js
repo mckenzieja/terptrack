@@ -1,17 +1,20 @@
 'use strict';
 
-var Todo = require('./models/todo.js');
+var users = require('./models/users.js');
 
-var todos = [
-  'Feed the dog',
-  'Walk the kids',
-  'Water the trees'
+var Users = [
+  {
+    "name": "josh",
+    "email": "josh@josh.com",
+    "pass": "pass1"
+  }
 ];
 
-todos.forEach(function(todo, index){
-  Todo.find({'name': todo}, function (err, todos){
-    if(!err && !todos.length) {
-      Todo.create({completed: false, name: todo});
+
+Users.forEach(function(todo, index){
+  Todo.find({'name': Users}, function (err, Users){
+    if(!err && !Users.length) {
+      users.create({completed: false, name: user});
       //creates new record
     }
 
