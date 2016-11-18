@@ -1,20 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Proza+Libre');
-
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 25px !important;
-  }
-
-  h2 {
-    font-size: 15px !important;
-  }
-
-  .test {
-    width: 90% !important;
-  }
-}
-
-
 body {
   background-color: #444449;
   color: white;
@@ -23,6 +7,7 @@ body {
 
 .test{
 width: 50%;
+margin: 0 auto;
 }
 
 input {
@@ -40,6 +25,95 @@ header h1 {
 footer {
   margin-top: 12%;
   text-align: center;
+}
+
+.splash{
+  background-color: #888889;
+  border-radius: 8px;
+  padding-bottom: 30%;
+  width: 80%;
+  margin: 0 auto;
+
+}
+
+.profile-name {
+  margin-left: 3%;
+  margin-top: 1%;
+  padding-top: 4%;
+}
+.img-holder{
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin: 3% 0 2% 3%;
+  width: 25%;
+  z-index: 0;
+
+}
+.screen {
+  overflow-x: hidden; /* Disable horizontal scroll */
+  border-radius: 10px;
+  position: absolute;
+  width: 100%;
+  transition: all .5s;
+  height: 0%;
+  background-color: rgba(230, 230, 230, 0.8);
+  top: 0;
+}
+
+.roll::before {
+  content: "\f093";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+/*--adjust as necessary--*/
+    color: #0000b3;
+    font-size: 40px;
+    padding-right: 0.5em;
+    position: absolute;
+    top: 25%;
+    left: 95px;
+}
+.img-holder:hover .screen{
+  height: 100%;
+}
+.profile-photo {
+  border-radius: 10px;
+  width: 100%;
+  height: 10%;
+  z-index: 1;
+}
+
+#map {
+  position: absolute;
+  height: 200px;
+  width: 500px;
+  margin: 0 5% 0 5%;
+  padding: 0;
+  display: inline-block;
+  background-color: gray;
+}
+.statusbtn {
+  width: 20%;
+
+  margin-left: 5%;
+}
+
+.feed {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  background-color: #e6e6ff;
+  color: black;
+  margin-left: 20%;
+  border-radius: 6px;
+  padding-bottom: 20px;
+}
+
+.friends {
+  display: inline-block;
+  margin-left: 5%;
 }
 
 /* The Overlay (background) */
@@ -89,6 +163,63 @@ footer {
     font-size: 60px;
 }
 
+
+
+/* The Upload Menu */
+.upload-screen {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    height: 0%;
+    width: 100%;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.upload-content {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+.upload-screen input {
+  color: white;
+  margin: 0 auto;
+}
+
+.upload-screen button {
+  color: black;
+}
+/* The navigation links inside the overlay */
+.upload-screen a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.upload-screen a:hover, .upload-screen a:focus {
+    color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+#closeUpload {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
 /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
 @media screen and (max-height: 450px) {
     .overlan a {font-size: 20px}
@@ -107,4 +238,139 @@ footer {
 }
 .form-register-heading {
   margin-bottom: 4%;
+}
+
+@media (max-width: 992px){
+  header h1 {
+    font-size: 25px !important;
+  }
+  h2 {
+    font-size: 15px !important;
+  }
+  .splash{
+  width: 95% !important;
+  padding-bottom: none !important;
+  }
+  .test {
+    width: 90% !important;
+  }
+  .profile-name  {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 5% !important;
+  }
+  .profile-photo{
+    display: block-inline  !important;
+    width: 40% !important;
+    margin-top: none !important;
+  }
+  #map {
+    display: block-inline !important;
+    width: 50% !important;
+    margin: 0 auto 0 auto !important;
+  }
+  .statusbtn {
+    width: 50% !important;
+    margin: 0 auto !important;
+    display: block !important;
+    margin-top: 2% !important;
+  }
+  .feed {
+    display: block !important;
+    width: 90% !important;
+    margin: 0 auto !important;
+    padding-bottom: none !important;
+  }
+}
+@media (max-width: 720px){
+  header h1 {
+    font-size: 25px !important;
+  }
+
+  h2 {
+    font-size: 15px !important;
+  }
+
+  .test {
+    width: 90% !important;
+  }
+  .profile-name  {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 5% !important;
+  }
+  .profile-photo{
+    display: block  !important;
+    width: 50% !important;
+    margin-top: 1% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  #map {
+    display: block !important;
+    width: 90% !important;
+    margin: 2% auto !important;
+  }
+  .statusbtn {
+    width: 90% !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+  .feed {
+    display: block !important;
+    width: 90% !important;
+    margin: 0 auto !important;
+    padding-bottom: none !important;
+  }
+}
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 25px !important;
+  }
+
+  h2 {
+    font-size: 15px !important;
+  }
+
+  .test {
+    width: 90% !important;
+  }
+  .profile-name  {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 5% !important;
+    font-size: 1em;
+  }
+  .profile-photo{
+    display: block  !important;
+    width: 50% !important;
+    margin-top: 1% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  #map {
+    display: block !important;
+    width: 90% !important;
+    margin: 2% auto !important;
+  }
+  .statusbtn {
+    width: 90% !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+  .feed {
+    display: block !important;
+    width: 90% !important;
+    margin: 0 auto !important;
+    padding-bottom: none !important;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+    .upload-screen a {font-size: 20px}
+    .upload-screen .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
 }

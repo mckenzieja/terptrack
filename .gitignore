@@ -26,8 +26,6 @@ npm-debug.log
 .sass-cache/
 browserstack-run.pid
 
-#DATABASE
-db
 
 #MOCK DATA
 mock
