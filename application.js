@@ -10,7 +10,7 @@ var multer = require('multer');
 //Connects express server to our Mongodb
 require('./src/database.js');
 
-var router = require('./src/api');
+var router = require('./routes');
 
 
 // Init App

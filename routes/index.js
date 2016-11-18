@@ -2,7 +2,7 @@
 var express = require('express');
 var router = express.Router();
 var app = express();
-var Users = require('../models/users');
+var Users = require('../src/models/users');
 var fs = require('fs');
 var multer = require('multer');
 

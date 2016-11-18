@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-var bcrypt = require('bcryptjs');
 
 
 
@@ -13,7 +12,7 @@ var UserSchema = mongoose.Schema({
     password: String,
     img: {
       data: Buffer,
-      contentType: String, 
+      contentType: String,
       path: String
     }
 

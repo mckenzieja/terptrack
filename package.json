@@ -2,10 +2,10 @@
   "name": "terptrack",
   "version": "1.0.0",
   "description": "A tracking/status update for traveling interpreters",
-  "main": "app/app.js",
+  "main": "application.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node application.js"
   },
   "repository": {
     "type": "git",
@@ -27,7 +27,7 @@
     "express": "^4.14.0",
     "mongodb": "^2.2.11",
     "mongoose": "4.6.6",
-    "multer": "^1.2.0",
+    "multer": "^1.2.0"
   },
   "devDependencies": {}
 }
