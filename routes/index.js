@@ -80,7 +80,7 @@ router.post('/login', function(req, res){
     });
   });
 //Change destination path to a folder in your directory
-var upload = multer({dest: '../db/images'});
+var upload = multer({dest: '../uploaded_imgs'});
 
 //UPLOADS IMAGE FILE BUT DOESNT UPDATE THE PATH ON THE USER DOCUMENT!
 router.put('/img/:email', upload.single('file'), function (req, res){

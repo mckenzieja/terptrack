@@ -29,3 +29,6 @@ browserstack-run.pid
 
 #MOCK DATA
 mock
+
+#DB Folder
+db
