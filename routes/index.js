@@ -94,8 +94,9 @@ router.put('/img/:email', upload.single('file'), function (req, res){
     else if (!data){
       res.status(404).send("User not found!");
     }
+     //Here I attempted to add the path propertie to the user's document
       Users.update({email: data.email},
-      {$set : {path : 'C:/Users/Master/Dropbox/Terptrack/mock/uploadedimage/' + file.name}
+      {$set : {path : '../uploaded_imgs' + file.name}
 
   });
   res.status(200).send("Upload Success");
