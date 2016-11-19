@@ -15,7 +15,7 @@ app.use('/', express.static('public'));
 
 
 
-//GET route to pull User Data
+//GET route to pull all User Data
 router.get('/secret', function(req, res){
   Users.find({}, function(err, users){
     if (err) {
@@ -79,8 +79,8 @@ router.post('/login', function(req, res){
     res.status(200).send(login);
     });
   });
-
-var upload = multer({dest: 'C:/Users/Master/Dropbox/Terptrack/mock/uploadedimage'});
+//Change destination path to a folder in your directory
+var upload = multer({dest: '../db/images'});
 
 //UPLOADS IMAGE FILE BUT DOESNT UPDATE THE PATH ON THE USER DOCUMENT!
 router.put('/img/:email', upload.single('file'), function (req, res){
