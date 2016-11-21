@@ -7,7 +7,6 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://use.fontawesome.com/3acaa77597.js"></script>
-
     <link rel="stylesheet" href="./styles/main.css">
   </head>
 
@@ -19,7 +18,7 @@
 
           <!-- PROFILE DIV -->
           <div id="profile" style="display:none" class="splash">
-
+            <div id="topwrap">
             <!-- Upload Menu -->
             <div id="upload" class="upload-screen">
               <!-- Button to close the upload menu-->
@@ -40,16 +39,17 @@
 
 
               </div><!-- End of img-holder -->
+              <div class="mapwrap">
               <div id="map"></div>
+              </div>
+            </div> <!-- End of topwrap -->
 
-
-
-
+            <div class="status-buttons">
           <!-- Update Status -->
               <button class="btn btn-md btn-primary btn-block statusbtn" href="" ng-click="helloWorld()">Post Update</button>
               <button class="btn btn-md btn-primary btn-block statusbtn arrived">Arrived</button>
               <button class="btn btn-md btn-primary btn-block statusbtn departing">Departing</button>
-
+            </div>
               <!-- Other Interpreters -->
               <div class="friends">
                 <h3>Collegues</h3>
