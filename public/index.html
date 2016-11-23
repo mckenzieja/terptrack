@@ -24,9 +24,11 @@
               <!-- Button to close the upload menu-->
               <a href="javascript:void(0)" id="closeUpload">&times;</a>
               <div class="upload-content">
-                <input type="file" file-model = "myFile"/><br/>
+                <form id="uploadform" enctype = "multipart/form-data">
+                <input type="file" file-model="myFile"/><br/>
                 <span></span><br/>
                 <button ng-click="uploadFile()">upload</button>
+              </form>
               </div><!-- end upload-content -->
 
             </div><!-- end Upload Menu -->
@@ -34,7 +36,7 @@
              <!-- START PROFILE PAGE -->
               <h1 class="profile-name">{{currentuser.name}}</h1>
               <div class="img-holder">
-                <img src="../blank-profile.png" class="profile-photo" alt="Profile Photo">
+              <img ng-src="{{currentuser.img.path}}"  class="profile-photo" alt="Profile Photo">
                 <div class="screen doit"><span class="roll doit"></span></div>
 
 

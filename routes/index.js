@@ -5,7 +5,8 @@ var app = express();
 var Users = require('../src/models/users');
 var fs = require('fs');
 var multer = require('multer');
-
+var mongoose = require('mongoose');
+var path = require('path');
 
 
 //Get Homepage
@@ -79,32 +80,49 @@ router.post('/login', function(req, res){
     res.status(200).send(login);
     });
   });
-//Change destination path to a folder in your directory
-var upload = multer({dest: '../uploaded_imgs'});
 
-//UPLOADS IMAGE FILE BUT DOESNT UPDATE THE PATH ON THE USER DOCUMENT!
-router.put('/img/:email', upload.single('file'), function (req, res){
+
+//FILE STREAM
+var storage = multer.diskStorage({
+  destination: function(req, file, cb) {
+    cb(null, './public/uploaded_imgs')
+  },
+  filename: function (req, file, cb) {
+    var jpg = 'jpeg';
+    if (file.mimetype == 'image/jpeg'){
+      cb(null, file.fieldname + '-' + Date.now() + '.jpeg');
+    }
+
+  }
+});
+
+//Change destination path to a folder in your directory
+var upload = multer({ storage: storage});
+
+//UPLOADS PROFILE IMAGE IN A FOLDER IN THE DIRECTORY
+router.post('/img/:email', upload.single('file'),function (req, res){
   var id = req.params.email;
   var file = req.file;
-  Users.findOne({email: id}, function(err, data){
+  var imgpath = './uploaded_imgs/' + file.filename;
+  Users.findOneAndUpdate({email: id}, {$set:
+    {img:{
+      path: imgpath
+    }}}, {upsert:true}, function(err, doc){
     if (err){
-      res.status(500).send(id);
-      throw err;
+      res.status(500).send(err);
     }
-    else if (!data){
-      res.status(404).send("User not found!");
-    }
-     //Here I attempted to add the path propertie to the user's document
-      Users.update({email: data.email},
-      {$set : {path : '../uploaded_imgs' + file.name}
+      res.status(200).send(imgpath);
+     });
 
-  });
-  res.status(200).send("Upload Success");
+   });
+
+//NOTE: Good for downlaoding files
+/*
+router.get('/img/:filename', function (req, res){
+  var filename = req.params.filename;
+  res.sendFile(path.join(__dirname,'../uploaded_imgs/', filename));
 });
-
-
-});
-
+*/
 
 
 

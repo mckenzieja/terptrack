@@ -11,6 +11,11 @@ $(".doit").click(function(){
   $(".upload-screen").css("height", "100%");
 });
 //Close Upload Menu
+function closeUp(){
+  $(".upload-screen").css("height", "0%");
+  
+}
+
 $("#closeUpload").click(function(){
   $(".upload-screen").css("height", "0%");
 });

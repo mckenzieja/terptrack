@@ -2,7 +2,8 @@
 
 
 /* In this function I am implmenting a workaround because I was not able to load
-a template on $http success callback in Angular */
+a template on $http success callback in Angular... yet.
+P.S.  I know this is bad practice. :(  */
 function loadProfile(){
   $("#profile").removeAttr("style");
   $("#login").remove();
@@ -16,19 +17,45 @@ function loadProfile(){
       head.appendChild(script);
 }
 
-terpTrack.controller('mainCtrl', function($scope, $http, fileUpload){
+terpTrack.controller('mainCtrl', function($scope, $http, $timeout){
 
 
 //Photo Upload function
-  $scope.uploadFile = function(){
-     var file = $scope.myFile;
 
-     console.log('file is ' );
-     console.dir(file);
+$scope.uploadFile = function() {
+   var file = $scope.myFile;
+   var uploadUrl = "/img/"+$scope.currentuser.email;
+   var fd = new FormData();
+   fd.append('file', file);
 
-     var uploadUrl = "/img/"+ $scope.currentuser.email;
-     fileUpload.uploadFileToUrl(file, uploadUrl);
-  };
+   $http.post(uploadUrl, fd, {
+      transformRequest: angular.identity,
+      headers: {
+        'Content-Type': undefined,
+       }
+   })
+
+   .success(function(response){
+       console.log("Upload Success");
+   })
+   .error(function(response){
+     if (response.status == 404){
+       console.log("user not found");
+     }
+     else if(response.status == 500){
+       console.log("Server Error");
+     }
+       console.log(response);
+   });
+   $timeout(function(){
+     closeUp();
+   }, 1000);
+
+};
+
+
+
+
 
 
 
@@ -98,6 +125,21 @@ $scope.submit = function(){
   };//end of submit function
 });//end of mainCtrl
 
+terpTrack.directive('file', function () {
+    return {
+        scope: {
+            file: '='
+        },
+        link: function (scope, el, attrs) {
+            el.bind('change', function (event) {
+                var file = event.target.files[0];
+                scope.file = file ? file : undefined;
+                scope.$apply();
+            });
+        }
+    };
+});
+
 terpTrack.directive('fileModel', ['$parse', function ($parse) {
    return {
       restrict: 'A',
@@ -113,23 +155,31 @@ terpTrack.directive('fileModel', ['$parse', function ($parse) {
       }
    };
 }]);
-
+/*
 terpTrack.service('fileUpload', ['$http', function ($http) {
    this.uploadFileToUrl = function(file, uploadUrl){
       var fd = new FormData();
       fd.append('file', file);
 
-      $http.put(uploadUrl, fd, {
+      $http.post(uploadUrl, fd, {
          transformRequest: angular.identity,
          headers: {
            'Content-Type': undefined,
           }
       })
 
-      .success(function(){
+      .success(function(response){
+          console.log("Upload Success");
       })
-
-      .error(function(){
+      .error(function(response){
+        if (response.status == 404){
+          console.log("user not found");
+        }
+        else if(response.status == 500){
+          console.log("Server Error");
+        }
+          console.log(response);
       });
    }
 }]);
+*/

@@ -5,9 +5,15 @@ var user = require('../src/models/users');
 
 //Register
 var newUser = new User({
-  name: name,
   email: email,
-  password: password
+  name: name,
+  password: password,
+  img: {
+    data: data;
+    contentType: contentType;
+    path: path;
+
+  }
 });
 
 User.createUser(newUser, function(err, user){

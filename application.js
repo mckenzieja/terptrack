@@ -4,13 +4,15 @@ var http = require('http');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var mongo = require('mongodb');
+
 var mongoose = require('mongoose');
 var multer = require('multer');
+
 //Connects express server to our Mongodb
 require('./src/database.js');
 
 var router = require('./routes');
+
 
 
 // Init App
@@ -22,6 +24,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 
 // Set Static Folder
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 
