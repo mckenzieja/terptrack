@@ -103,7 +103,7 @@ var upload = multer({ storage: storage});
 router.post('/img/:email', upload.single('file'),function (req, res){
   var id = req.params.email;
   var file = req.file;
-  var imgpath = './uploaded_imgs/' + file.filename;
+  var imgpath = file.filename;
   Users.findOneAndUpdate({email: id}, {$set:
     {img:{
       path: imgpath

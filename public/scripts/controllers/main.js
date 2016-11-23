@@ -22,6 +22,7 @@ terpTrack.controller('mainCtrl', function($scope, $http, $timeout){
 
 //Photo Upload function
 
+
 $scope.uploadFile = function() {
    var file = $scope.myFile;
    var uploadUrl = "/img/"+$scope.currentuser.email;
@@ -37,6 +38,7 @@ $scope.uploadFile = function() {
 
    .success(function(response){
        console.log("Upload Success");
+       $scope.imgUrl = response;
    })
    .error(function(response){
      if (response.status == 404){
@@ -109,6 +111,7 @@ $scope.submit = function(){
     if(response.status == 200){
   //Here I store the user infomation that's found and stores it in "currentuser"
       $scope.currentuser = response.data;
+      $scope.imgUrl = $scope.currentuser.img.path;
   //Changes HTML upon successful login. jQuery is a work around.
       loadProfile();
     }
@@ -123,6 +126,7 @@ $scope.submit = function(){
       });
     });
   };//end of submit function
+
 });//end of mainCtrl
 
 terpTrack.directive('file', function () {
